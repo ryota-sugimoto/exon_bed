@@ -19,8 +19,10 @@ def block_bed(d):
     new_d["chromStart"] = new_d["chromStart"] + z[1][1]
     new_d["chromEnd"] = new_d["chromStart"] + z[1][0]
     new_d["blockCount"] = 0
-    new_d["blockSizes"] = []
-    new_d["blockStarts"] = []
+    new_d["thickStart"] = new_d["chromStart"]
+    new_d["thickEnd"] = new_d["chromEnd"]
+    new_d["blockSizes"] = z[1][0]
+    new_d["blockStarts"] = new_d["chromStart"]
     yield new_d
 
 def block(s):
